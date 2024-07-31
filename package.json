@@ -1,0 +1,28 @@
+{
+  "name": "button_3d",
+  "version": "1.0.0",
+  "description": "A 3D button component using  JavaScript, HTML, and CSS.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cp src/styles.css dist/ && cp src/button_3d.js dist/ && cp src/index.html dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francescfores/Button_3D.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "button",
+    "3d",
+    "component"
+  ],
+  "author": "francesc fores campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francescfores/Button_3D/issues"
+  },
+  "homepage": "https://github.com/francescfores/Button_3D#readme"
+}

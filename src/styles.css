@@ -1,0 +1,225 @@
+/* It is not necessary only for the body*/
+.h-screen{
+    height:90vh;
+}
+.mt-36{
+    margin-top:136px;
+}
+.justify-center {
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-col {
+    flex-direction: column;
+}
+.flex{
+    display : flex;
+}
+
+/*style for btn*/
+.btn{
+    --font-body-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    --height: 50px;
+    --raise: 100px;
+    --rounded: 10px;
+    --rotate: 1;
+    --rotate_invers: 1 * - 1;
+    --border:4px;
+    --border_style:solid #004c65 var(--border);
+    --bg-front-color: #AAD3EA;
+    --bg-shadow-color: #4B4B4B84;
+    --bg-back-color: #004c65;
+    --font-color: white;
+    --font-body-weight:800;
+    --width:180px;
+    color:var(--font-color);
+    font-family:var(--font-body-family);
+}
+
+.btn_primary{
+    --bg-shadow-color: #4B4B4B20;
+    --bg-front-color: #338a9d;
+    --bg-back-color: #9a453f;
+    --border_style:solid #b84a41 var(--border);
+    --font-color: #ea893e;
+}
+.btn_secondary{
+    --bg-shadow-color: #4B4B4B84;
+    --bg-front-color: #fffbb5;/*#fffbb5;*/
+    --bg-back-color: #4e6a6b;
+    --border_style:solid #5c8486 var(--border);
+    --font-color: #20201e;
+}
+.btn_anchor{
+    --bg-shadow-color: #4B4B4B84;
+    --bg-front-color: #ececec;
+    --bg-back-color: #313131;
+    --border_style:solid #404040 var(--border);
+    --font-color: #7f4997;
+}
+.btn_danger{
+    --bg-shadow-color: #4B4B4B84;
+    --bg-front-color: #8B3357;
+    --bg-back-color: #afca92;
+    --border_style:solid #d2f3af var(--border);
+    --font-color: #fff;
+}
+.btn_disabled{
+    --bg-shadow-color: #4B4B4B84;
+    --bg-front-color: #f16c5d;
+    --bg-back-color: #7da7ac;
+    --border_style:solid #9dd6dd var(--border);
+    --font-color: #ececec;
+}
+.btn p{
+    font-weight:var(--font-body-weight);
+}
+.btn_shadow {
+    height: calc(var(--height) + var(--raise));
+
+    width:var(--width);
+    border: var(--border) solid transparent;
+}
+.btn_shadow:before {
+    content:" ";
+    position:absolute;
+    height: var(--height);
+    margin-top: calc(var(--raise) + (var(--raise)/1.2));
+    width:var(--width);
+    background: var(--bg-shadow-color);
+    border-radius: var(--rounded);
+    transition:transform 0.2s ease-out;
+    border: var(--border) solid transparent;
+}
+.btn_back:before{
+    content:" ";
+    position: absolute;
+    height: var(--height);
+    margin-top: var(--raise);
+
+    width:var(--width);
+    border: var(--border) solid transparent;
+    background: var(--bg-back-color);
+    border-radius:var(--rounded);
+    transition:transform 0.1s ease-out;
+}
+.btn_front{
+    position: absolute;
+    height: var(--height);
+    width:var(--width);
+
+    background: var(--bg-front-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:var(--rounded);
+    border: var(--border_style);
+    transition:transform 0.1s ease-out;
+}
+
+.btn_shadow_left:before{
+    transition: transform 0.2s ease-out;
+    transform:skewY(calc(1deg * var(--rotate_invers)));
+}
+.btn_shadow_right:before{
+    transition:transform 0.2s ease-out;
+    transform:skewY(calc(1deg * var(--rotate)));
+}
+.btn_shadow_default:before{
+    transform:skew(0) translateZ(0);
+}
+
+.btn_shadow_default:hover:before{
+    transform: translateY(-5px);
+}
+.btn_shadow_default:active:before{
+    transform: translateY(calc((var(--raise)/1.2) * -1 ));
+}
+.btn_shadow_left:active:before{
+    transform: translateY(calc((var(--raise)/1.2) * -1 ));
+}
+.btn_shadow_right:active:before{
+    transform: translateY(calc((var(--raise)/1.2) * -1 ));
+}
+/*btn_front events*/
+.btn_front_left{
+    transform:skewY(calc(1deg * var(--rotate_invers)));
+}
+.btn_front_right{
+    transform:skewY(calc(1deg * var(--rotate)));
+    transition:transform 0.2s ease-out;
+}
+.btn_front_default{
+    transform:skew(0) translateZ(0);
+    transition:transform 0.2s ease-out;
+}
+
+.btn_front_left:active{
+    transform:skewY(0) translateY(var(--raise));
+}
+.btn_front_right:active{
+    transform:skewY(0) translateY(var(--raise));
+}
+.btn_front_default:hover{
+    transform: translateY(calc(var(--raise) * 0.5));
+
+}
+.btn_front_default:active{
+    transform:skewY(0) translateY(var(--raise));
+}
+
+/*loading*/
+.btn_loading_wrapp{
+    position: absolute;
+    height: var(--height);
+    width:var(--width);
+
+    margin-left:calc(var(--border)*-1);/* padding for borders of parent */
+    margin-right:calc(var(--border)*-1);/* padding for borders of parent */
+    background: var(--bg-back-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:var(--rounded);
+    border: var(--border_style);
+    overflow: hidden;
+    z-index:1;
+}
+
+.btn_loading_wrapp:before{
+    content:" ";
+    position: absolute;
+    height: var(--height);
+    width: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-front-color);
+    z-index:-1;
+}
+
+.btn_loading_2:before{
+    width:100%;
+    transition: width 1s ease-in;
+}
+.opacity-0{
+    opacity:0;
+}
+.hidden{
+    display:none;
+}
+/*.flex{
+  display:flex;
+}*/
+
+/*animation text*/
+.btn_loading_2 .txt_loading{
+    animation: slide-up 0.5s ease-in-out;
+}
+.btn_loading_2 .txt_loaded{
+    animation: slide-down 0.5s ease-in-out;
+}
